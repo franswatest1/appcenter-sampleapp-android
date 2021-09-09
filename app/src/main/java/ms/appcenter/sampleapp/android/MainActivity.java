@@ -11,10 +11,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+/*
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.distribute.Distribute;
+*/
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_root);
 
+        /*
         // Initialize SDK
         if (!BuildConfig.APPCENTER_APP_SECRET.equals("")) {
             // Use APPCENTER_APP_SECRET environment variable if it exists
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             AppCenter.start(getApplication(), "<APP SECRET HERE>",
                     Analytics.class, Crashes.class, Distribute.class);
         }
+        */
 
 
         if (BuildConfig.DEBUG) {
