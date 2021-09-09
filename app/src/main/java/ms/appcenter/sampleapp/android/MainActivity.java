@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
             AppCenter.start(getApplication(), "<APP SECRET HERE>",
                     Analytics.class, Crashes.class, Distribute.class);
         }
-        */
 
 
         if (BuildConfig.DEBUG) {
             AppCenter.setLogLevel(Log.VERBOSE);
         }
+        */
 
         // UI Elements
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
