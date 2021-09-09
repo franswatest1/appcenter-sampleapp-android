@@ -11,7 +11,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import com.microsoft.appcenter.analytics.Analytics;
+// import com.microsoft.appcenter.analytics.Analytics;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class AnalyticsActivity extends Fragment {
 
     public static class EventDialog extends DialogFragment {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
-            Analytics.trackEvent("Sample event");
+            // Analytics.trackEvent("Sample event");
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setMessage("Event sent").setPositiveButton("OK", (dialog, id) -> {
                 // Insert any code here that you want triggered by the Click Event
@@ -66,7 +66,7 @@ public class AnalyticsActivity extends Fragment {
                         properties.put("Color", "Red");
                         break;
                 }
-                Analytics.trackEvent("Color event", properties);
+                // Analytics.trackEvent("Color event", properties);
 
             });
             return builder.create();
