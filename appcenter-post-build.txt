@@ -1,8 +1,8 @@
-echo "Post Build Script Started"
+AppiumFolder=`find "$APPCENTER_SOURCE_DIRECTORY" -name "appiumuitest" | head -1`
+echo "Appium folder: $AppiumFolder"
 
-cat << EOF
-Check if maven is installed...
-check maven version
-EOF
+echo "Pack Appium test classes and all dependencies..."
+mvn -f "$AppiumFolder/pom.xml" -DskipTests -P prepare-for-upload package
 
-mvn --version
+AppiumUploadFolder="$AppiumFolder/target/upload"
+ls $AppiumUploadFolder
