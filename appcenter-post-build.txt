@@ -5,4 +5,11 @@ echo "Pack Appium test classes and all dependencies..."
 mvn -f "$AppiumFolder/pom.xml" -DskipTests -P prepare-for-upload package
 
 AppiumUploadFolder="$AppiumFolder/target/upload"
-ls $AppiumUploadFolder
+
+APKFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.apk | head -1`
+
+npm install -g appcenter-cli@1.2.2
+
+appcenter login --token token
+
+appcenter test run uitest --app "[Your App Center App Name]" --devices "[Your Appcenter Android Device List]" --app-path $APKFile --test-series "master" --locale "en_US" --build-dir $UITestBuildDir --uitest-tools-dir $TestCloudExeDirectory --async
