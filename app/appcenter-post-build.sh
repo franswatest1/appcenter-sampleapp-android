@@ -12,7 +12,7 @@ AppiumUploadFolder="$AppiumFolder/target/upload"
 
 APKFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.apk | head -1`
 
-npm install -g appcenter-cli
+#npm install -g appcenter-cli
 
 appcenter login --token $ENVIRONMENT_BUILDTOKEN
 
