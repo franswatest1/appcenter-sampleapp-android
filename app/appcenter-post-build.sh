@@ -10,3 +10,5 @@ check maven version
 EOF
 
 mvn --version
+
+echo "AppCenter Directory: $APPCENTER_SOURCE_DIRECTORY"
