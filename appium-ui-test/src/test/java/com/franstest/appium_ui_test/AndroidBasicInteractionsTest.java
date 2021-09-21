@@ -31,7 +31,7 @@ public class AndroidBasicInteractionsTest extends BaseTest {
     public TestWatcher watcher = Factory.createWatcher();
 
     @BeforeClass
-    public void setUp() throws IOException {
+    public static void setUp() throws IOException {
         File classpathRoot = new File(System.getProperty("user.dir"));
         File appDir = new File(classpathRoot, "../apps");
         File app = new File(appDir.getCanonicalPath(), "ApiDemos-debug.apk");
@@ -90,7 +90,7 @@ public class AndroidBasicInteractionsTest extends BaseTest {
     }
 
     @AfterClass
-    public void tearDown() {
+    public static void tearDown() {
         if (driver != null) {
         	driver.label("Stopping App");
             driver.quit();
