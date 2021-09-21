@@ -14,6 +14,7 @@ APKFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.apk | head -1`
 
 #npm install -g appcenter-cli
 appcenter --version
+echo "App path: $APKFile"
 
 appcenter login --token $BUILDTOKEN
 
