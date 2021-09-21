@@ -1,3 +1,4 @@
+/*
 apply plugin: 'com.android.application'
 
 android {
@@ -51,3 +52,4 @@ dependencies {
 
     androidTestImplementation('com.microsoft.appcenter:espresso-test-extension:1.4')
 }
+*/
