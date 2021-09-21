@@ -10,12 +10,10 @@ mvn -f "$AppiumFolder/pom.xml" -DskipTests -P prepare-for-upload package
 
 AppiumUploadFolder="$AppiumFolder/target/upload"
 
-echo "Build Token: ${BUILDTOKEN}"
-echo "App Name: $APPCENTER_APP_NAME"
-echo "Devcies: $APPCENTER_DEVICE"
-#APKFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.apk | head -1`
+APKFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.apk | head -1`
 
 #npm install -g appcenter-cli
+appcenter --version
 
 appcenter login --token $BUILDTOKEN
 
