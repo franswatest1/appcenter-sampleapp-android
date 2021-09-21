@@ -1,6 +1,7 @@
 package com.franstest.appium_ui_test;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidElement;
 import junit.framework.Assert;
 
@@ -99,7 +100,7 @@ public class AndroidBasicInteractionsTest extends BaseTest {
 
     @Test
     public void testSendKeys() {
-        driver.startActivity(PACKAGE, SEARCH_ACTIVITY);
+        driver.startActivity(new Activity(PACKAGE, SEARCH_ACTIVITY));
         AndroidElement searchBoxEl = (AndroidElement) driver.findElementById("txt_query_prefill");
         searchBoxEl.sendKeys("Hello world!");
         AndroidElement onSearchRequestedBtn = (AndroidElement) driver.findElementById("btn_start_search");
@@ -113,7 +114,7 @@ public class AndroidBasicInteractionsTest extends BaseTest {
     @Test
     public void testOpensAlert() {
         // Open the "Alert Dialog" activity of the android app
-        driver.startActivity(PACKAGE, ALERT_DIALOG_ACTIVITY);
+        driver.startActivity(new Activity(PACKAGE, ALERT_DIALOG_ACTIVITY));
 
         // Click button that opens a dialog
         AndroidElement openDialogButton = (AndroidElement) driver.findElementById("io.appium.android.apis:id/two_buttons");
