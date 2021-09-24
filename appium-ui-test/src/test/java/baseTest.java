@@ -58,4 +58,21 @@ public class baseTest {
     
     Assert.assertTrue(buildtext.getText().contains("Create an installable app package automatically"));
   }
+  
+  @After
+  public void after() {
+    if(driver != null) {
+      driver.lable("Stopping App");
+      driver.quit();
+    }
+  }
+  
+  public static void startEmulator() throws IOException {
+    Runtime.getRuntime().exec(System.getProperty("user.dir") + "\\src\\main\\resources\\startEmulator.bat");
+    try {
+      Thread.sleep(7000);
+    } catche (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
 }
