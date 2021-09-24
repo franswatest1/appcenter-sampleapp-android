@@ -41,7 +41,7 @@ public class baseTest {
   }
   
   @Test
-  public void can StartAppInTest() throws IOException {
+  public void canStartAppInTest() throws IOException {
     driver = startApp();
     driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     
@@ -71,7 +71,7 @@ public class baseTest {
     Runtime.getRuntime().exec(System.getProperty("user.dir") + "\\src\\main\\resources\\startEmulator.bat");
     try {
       Thread.sleep(7000);
-    } catche (InterruptedException e) {
+    } catch (InterruptedException e) {
       e.printStackTrace();
     }
   }
