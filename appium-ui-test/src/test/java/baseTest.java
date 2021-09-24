@@ -33,8 +33,9 @@ public class baseTest {
     capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel3aTest");
     capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 100);
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
-    capabilities.setCapability(MobileCapabilityType.APP_PACKAGE, "ms.appcenter.sampleapp.android");
-    capabilities.setCapability(MobileCapabilityType.APP_ACTIVITY, ".MainActivity");
+    
+    capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "ms.appcenter.sampleapp.android");
+    capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".MainActivity");
     
     driver = Factory.createAndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     return driver;
@@ -62,7 +63,7 @@ public class baseTest {
   @After
   public void after() {
     if(driver != null) {
-      driver.lable("Stopping App");
+      driver.label("Stopping App");
       driver.quit();
     }
   }
