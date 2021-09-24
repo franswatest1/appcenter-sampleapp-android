@@ -54,7 +54,7 @@ public class baseTest {
     MobileElement build = driver.findElementByXPath("//android.widget.TextView[@text='Build']");
     build.click();
     
-    MobileElement buildtext = driver.findElementByAccessibilityId("ms.appcenter.sampleapp.android:id/buildTextView");
+    MobileElement buildtext = driver.findElementById("ms.appcenter.sampleapp.android:id/buildTextView");
     buildtext.click();
     
     Assert.assertTrue(buildtext.getText().contains("Create an installable app package automatically"));
